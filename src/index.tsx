@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import L from 'leaflet';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "leaflet/dist/leaflet.css";
+import './index.css';
+
+// Marker icon does not work out of box
+L.Icon.Default.imagePath='leaflet_images/';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,3 +22,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

@@ -1,0 +1,74 @@
+.Wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .Logo-div {
+    display: flex;
+    font-size: 25px;
+    color: #7dfad9;
+  }
+  
+  .Controls-container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .Inputs-container {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  
+  .Text-input {
+    background: #f5f6f7;
+    border: 1px solid #7dfad9;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #334144;
+    margin: 5px;
+  }
+  
+  .Select-input {
+    background: #f5f6f7;
+    border: 1px solid #7dfad9;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #334144;
+    margin: 5px;
+  }
+  
+  .Button-input {
+    background: #ffff;
+    border: 2px solid green;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #334144;
+  }
+  
+  .Button-input:hover {
+    cursor: pointer;
+  }
+  
+  .Button-input:disabled {
+    cursor: not-allowed;
+    background-color: rgb(189, 189, 189);
+  }
+  
