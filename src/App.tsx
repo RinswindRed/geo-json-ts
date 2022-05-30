@@ -22,6 +22,8 @@ const App = () => {
     FeatureCollection<GeometryObject, any> | any
   >(null);
   const [searchBy, setSearchBy] = useState<string>("");
+
+  // NOTE: Default position Bora Bora
   const [position, setPosition] = useState<[number, number]>([
     -16.497919727905824, -151.741396396074,
   ]);
@@ -37,7 +39,7 @@ const App = () => {
     getGeoJson(true);
   }, []);
 
-  const getGeoJson = (isInitialCall: boolean) => {
+  const getGeoJson = async (isInitialCall: boolean) => {
     const lat = Number(isInitialCall ? position[0] : latitude);
     const lng = Number(isInitialCall ? position[1] : longitude);
     const lonMin = Number(lon_min);
@@ -56,7 +58,7 @@ const App = () => {
 
       // Added functionality to get bbox based on lan and lng
       // Because size and limit from API i limited area around centre on 0.5 km rectangle
-      //  Turf is used to make bbox params from given lat,lng
+      // Turf is used to make bbox params from given lat,lng
 
       if (searchBy === LAT_LNG || isInitialCall) {
         const p = point([lng, lat]);
@@ -73,8 +75,8 @@ const App = () => {
         url = `${BASE_MAP_URL}?bbox=${lonMin},${latMin},${lonMax},${latMax}`;
       }
 
-      (async () => {
-        const parser = new DOMParser();
+      const parser = new DOMParser();
+      try {
         let response = await fetch(url);
         const data = await response.text();
         const xmlDocument = parser.parseFromString(data, "text/xml");
@@ -83,7 +85,9 @@ const App = () => {
           setGeoJson(geoJsonObject);
           setLoading(false);
         }
-      })();
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
 

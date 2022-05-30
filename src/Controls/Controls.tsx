@@ -16,7 +16,7 @@ const Controls: React.FC<{
   handleSelect: (option: string) => void;
   handleInput: (e: React.FormEvent<HTMLInputElement>) => void;
   getGeoJson: (isInitialCall: boolean) => void;
-}> = ({searchBy, handleSelect, handleInput, getGeoJson }) => {
+}> = ({ searchBy, handleSelect, handleInput, getGeoJson }) => {
   return (
     <div className="Wrapper">
       <div className="Logo-div">GJSON</div>

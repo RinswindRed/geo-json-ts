@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import "leaflet/dist/leaflet.css";
 import './index.css';
 
-// Marker icon does not work out of box
+// NOTE: Marker icon does not work out of box
 L.Icon.Default.imagePath='leaflet_images/';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+// NOTE: StrictMode while in develop phase 
 root.render(
   <React.StrictMode>
     <App />
